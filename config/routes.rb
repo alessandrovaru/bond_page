@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      get 'articles/index'
+      get 'articles/create'
+      get 'articles/show'
+      get 'articles/destroy'
+    end
+  end
   get 'homepage/index'
+
+  
 
   root 'homepage#index'
 
