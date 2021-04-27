@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { map } from "jquery";
 
-import AllArticles from "../components/AllArticles";
+import ArticleList from "./ArticleList";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -26,6 +26,7 @@ const Articles = () => {
       setLoadingA(false);
     }
   }
+
   useEffect(() => {
     getArticles();
   }, []);
@@ -33,7 +34,7 @@ const Articles = () => {
   return (
     <>
       <h2>Todos los articles</h2>
-      <AllArticles article={articles} />
+      <ArticleList articles={articles} />
       <Link to="/" className="btn btn-lg custom-button" role="button">
         Volver al home
       </Link>

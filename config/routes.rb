@@ -3,13 +3,15 @@ Rails.application.routes.draw do
     namespace :v1 do
       get 'articles/index'
       get 'articles/create'
-      get 'articles/show'
-      get 'articles/destroy'
+      get '/show/:id', to: 'articles#show'
+      delete '/destroy/:id', to: 'articles#destroy'
     end
   end
   get 'homepage/index'
 
-  
+  get '/articles', to: 'articles#index'
+
+  get '/article/:id', to: 'articles#show'
 
   root 'homepage#index'
 
