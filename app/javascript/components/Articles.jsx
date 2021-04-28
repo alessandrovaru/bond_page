@@ -34,6 +34,13 @@ const Articles = () => {
   return (
     <>
       <h2>Todos los articles</h2>
+      <Link
+        to="/articles/new"
+        className="btn btn-lg custom-button"
+        role="button"
+      >
+        nuevo
+      </Link>
       <ArticleList articles={articles} />
       <Link to="/" className="btn btn-lg custom-button" role="button">
         Volver al home
